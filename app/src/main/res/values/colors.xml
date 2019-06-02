@@ -3,9 +3,12 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorLogin">#9584F556</color>
+    <color name="colorLogin">#FFE800</color>
     <color name="colorStudent">#9567A0CA</color>
     <color name="colorTeacher">#F255F5F1</color>
     <color name="colorAdmin">#23E22B</color>
     <color name="black_overlay">#66000000</color>
+    <color name="button_color">#0B73D6</color>
+    <color name="textcolor">#000000</color>
+    <color name="button_color2">#81A7EB</color>
 </resources>

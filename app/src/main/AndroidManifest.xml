@@ -9,16 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StudentActivity"/>
-        <activity android:name=".adminActivity" />
-        <activity android:name=".teacherActivity" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Activity.AddStuInforActivity">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+        <activity android:name=".Activity.adminStuAdd" />
+        <activity android:name=".Activity.adminStuQuery" >
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>>
+        <activity android:name=".Activity.TeacherActivity" />
+        <activity android:name=".Activity.StudentActivity" />
+        <activity android:name=".Activity.adminStu" />
+        <activity android:name=".Activity.adminTea" />
+        <activity android:name=".Activity.AdminActivity">
+
+        </activity>
+        <activity android:name=".Activity.LoginActivity"></activity>
     </application>
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.
+WRITE_EXTERNAL_STORAGE" />
+    <!--请求访问使用照相设备-->
+    <uses-permission android:name="android.permission.CAMERA" />
 
 </manifest>
