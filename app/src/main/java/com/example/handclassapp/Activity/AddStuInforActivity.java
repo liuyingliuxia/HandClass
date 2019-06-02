@@ -13,11 +13,11 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.handclassapp.DAO.MyDb;
+import com.example.handclassapp.DAO.MyDbHelper;
 import com.example.handclassapp.R;
 
 public class AddStuInforActivity extends AppCompatActivity {
-    private MyDb dbHelper;
+    private MyDbHelper dbHelper;
     private ImageButton photo;
     private Button save;
 
@@ -45,7 +45,7 @@ public class AddStuInforActivity extends AppCompatActivity {
         age=findViewById(R.id.editAge);
         college=findViewById(R.id.collegeSpinner);
         classStu=findViewById(R.id.ClassSpinner);
-        dbHelper = new MyDb(this, "HandClass.db", null, 1);
+        dbHelper = new MyDbHelper(this, "HandClass.db", null, 1);
         dbHelper.getWritableDatabase();
 
          photo.setOnClickListener(new View.OnClickListener() {
