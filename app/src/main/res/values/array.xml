@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="sex">
+        <item>男</item>
+        <item>女</item>
+
+    </string-array>
+
+    <string-array name="college">
+        <item>法学院</item>
+        <item>工学院</item>
+        <item>数理学院</item>
+        <item>人文学院</item>
+    </string-array>
+    <string-array name="profession">
+        <item>工管1班</item>
+        <item>工管2班</item>
+        <item>工管3班</item>
+        <item>软工1班</item>
+        <item>软工2班</item>
+        <item>软工3班</item>
+        <item>通信1班</item>
+        <item>通信2班</item>
+        <item>通信3班</item>
+        <item>国贸1班</item>
+        <item>国贸2班</item>
+        <item>国贸3班</item>
+    </string-array>
+
+</resources>
+

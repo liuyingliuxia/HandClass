@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">34_林文栋</string>
+    <string name="login">登录</string>
+    <string name="username">账号：</string>
+    <string name="pwd">密码：</string>
+    <string name="id">选择身份</string>
+    <string name="student">学生</string>
+    <string name="teacher">教师</string>
+    <string name="admin">管理员</string>
+    <string name="inputUsername">请输入学号或职工号</string>
+    <string name="inputpwd">请输入密码</string>
+    <string name="infor">个人信息维护</string>
+    <string name="studentlook">课程修习查询</string>
+    <string name="teacherlook">管理学生课程修习</string>
+    <string name="welcomestu">欢迎学生：</string>
+    <string name="welcometea">欢迎教师：</string>
+    <string name="welcomeadmin">欢迎管理员：</string>
+    <string name="studentManager">学生管理</string>
+    <string name="stuAdminQuery">学生信息查询</string>
+    <string name="stuAdminAdd">学生信息添加</string>
+    <string name="TeaAdminQuery">教师信息查询</string>
+    <string name="TeaAdminAdd">教师信息添加</string>
+    <string name="Headphoto">头像</string>
+    <string name="Name">姓名</string>
+    <string name="sex">性别</string>
+    <string name="Proclass">专业班级</string>
+    <string name="age">年龄</string>
+    <string name="stuNo">学号</string>
+    <string name="college">学院</string>
+    <string name="teacherManager">教师管理</string>
+</resources>
