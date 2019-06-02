@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    android:background="@drawable/teachbg"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Activity.TeacherActivity">
-=======
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorTeacher"
-    tools:context=".teacherActivity">
->>>>>>> 42b279934697ae565ecb6a32268e9b730a2160bc
+    android:background="@color/colorStudent"
+    tools:context=".StudentActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -35,7 +29,7 @@
             android:id="@+id/button7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/teacherlook"
+            android:text="@string/studentlook"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -47,12 +41,8 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
-
-=======
             android:background="@color/black_overlay"
->>>>>>> 42b279934697ae565ecb6a32268e9b730a2160bc
-            android:text="@string/welcometea"
+            android:text="@string/welcomestu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -60,4 +50,4 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.155" />
     </android.support.constraint.ConstraintLayout>
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

@@ -16,6 +16,7 @@
     <string name="welcometea">欢迎教师：</string>
     <string name="welcomeadmin">欢迎管理员：</string>
     <string name="studentManager">学生管理</string>
+<<<<<<< HEAD
     <string name="stuAdminQuery">学生信息查询</string>
     <string name="stuAdminAdd">学生信息添加</string>
     <string name="teacherManager">教师管理</string>
@@ -28,4 +29,7 @@
     <string name="age">年龄</string>
     <string name="stuNo">学号</string>
     <string name="college">学院</string>
+=======
+    <string name="teacherManager">教师管理</string>
+>>>>>>> 42b279934697ae565ecb6a32268e9b730a2160bc
 </resources>

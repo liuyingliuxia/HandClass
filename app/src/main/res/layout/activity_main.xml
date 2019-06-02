@@ -4,13 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:background="@drawable/loginbg"
     tools:context=".Activity.LoginActivity">
+=======
+    android:background="@drawable/class_login"
+    tools:context=".MainActivity">
+>>>>>>> 42b279934697ae565ecb6a32268e9b730a2160bc
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="17dp"
         android:text="@string/pwd"
+<<<<<<< HEAD
         android:textColor="@color/textcolor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.162"
@@ -18,13 +24,24 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.364" />
+=======
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.369" />
+>>>>>>> 42b279934697ae565ecb6a32268e9b730a2160bc
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/username"
+<<<<<<< HEAD
         android:textColor="@color/textcolor"
+=======
+>>>>>>> 42b279934697ae565ecb6a32268e9b730a2160bc
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.162"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -61,12 +78,20 @@
         app:layout_constraintVertical_bias="0.368" />
 
     <Button
+<<<<<<< HEAD
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login"
         android:background="@color/button_color"
         android:textColor="@color/textcolor"
+=======
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorLogin"
+        android:text="@string/login"
+>>>>>>> 42b279934697ae565ecb6a32268e9b730a2160bc
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.465"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -79,7 +104,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/id"
+<<<<<<< HEAD
         android:textColor="@color/textcolor"
+=======
+>>>>>>> 42b279934697ae565ecb6a32268e9b730a2160bc
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.169"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -88,7 +116,10 @@
         app:layout_constraintVertical_bias="0.487" />
 
     <RadioGroup
+<<<<<<< HEAD
         android:id="@+id/radioGroup"
+=======
+>>>>>>> 42b279934697ae565ecb6a32268e9b730a2160bc
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -102,14 +133,18 @@
             android:id="@+id/radioStu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:textColor="@color/textcolor"
             android:checked="true"
+=======
+>>>>>>> 42b279934697ae565ecb6a32268e9b730a2160bc
             android:text="@string/student" />
 
         <RadioButton
             android:id="@+id/radioTea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:textColor="@color/textcolor"
             android:text="@string/teacher" />
 
@@ -118,6 +153,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/textcolor"
+=======
+            android:text="@string/teacher" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+>>>>>>> 42b279934697ae565ecb6a32268e9b730a2160bc
             android:layout_weight="1"
             android:text="@string/admin" />
 
