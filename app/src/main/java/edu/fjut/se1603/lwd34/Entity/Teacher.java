@@ -1,4 +1,4 @@
-package edu.fjut.se1603.lwd34.DAO;
+package edu.fjut.se1603.lwd34.Entity;
 
 public class Teacher {
     public int getTno() {

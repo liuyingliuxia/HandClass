@@ -1,4 +1,4 @@
-package edu.fjut.se1603.lwd34.DAO;
+package edu.fjut.se1603.lwd34.Entity;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -56,11 +56,15 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             +"ClassName STRING,"
             +"ClassPlace STRING)";
 
-    private Context mContext;
+    public Context mContext;
 
     public MyDatabaseHelper(Context context, String name,
                             SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
+        mContext = context;
+    }
+    public MyDatabaseHelper(Context context) {
+        super(context, "MyHandClass.db", null, 2);
         mContext = context;
     }
 
@@ -77,13 +81,13 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("drop table if exists studenet");
+      /*  db.execSQL("drop table if exists studenet");
         db.execSQL("drop table if exists teacher");
         db.execSQL("drop table if exists stu_assess");
         db.execSQL("drop table if exists stu_attend");
         db.execSQL("drop table if exists homework_score");
         db.execSQL("drop table if exists course");
-        onCreate(db);
+        onCreate(db);*/
     }
 
 }

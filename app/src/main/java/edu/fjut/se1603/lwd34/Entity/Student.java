@@ -1,10 +1,35 @@
-package edu.fjut.se1603.lwd34.DAO;
+package edu.fjut.se1603.lwd34.Entity;
 
 public class Student {
     private int sno,sclass,stuSex;
     private String sname;
     private String sprofess;
     private String birthDate;
+    private String photo;
+    private String pwd;
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "sno=" + sno +
+                ", sclass=" + sclass +
+                ", stuSex=" + stuSex +
+                ", sname='" + sname + '\'' +
+                ", sprofess='" + sprofess + '\'' +
+                ", birthDate='" + birthDate + '\'' +
+                ", photo='" + photo + '\'' +
+                ", pwd='" + pwd + '\'' +
+                '}';
+    }
+
+    public Student(int sno,String pwd) {
+        this.sno = sno;
+        this.pwd = pwd;
+    }
+
+    public Student() {
+        super();
+    }
 
     public int getSno() {
         return sno;
@@ -70,6 +95,5 @@ public class Student {
         this.pwd = pwd;
     }
 
-    private String photo;
-    private String pwd;
+
 }

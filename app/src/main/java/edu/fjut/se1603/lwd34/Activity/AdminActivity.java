@@ -1,16 +1,16 @@
 package edu.fjut.se1603.lwd34.Activity;
 
-import android.content.Intent;
+import android.content.ContentValues;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import edu.fjut.se1603.lwd34.DAO.MyDatabaseHelper;
-import edu.fjut.se1603.lwd34.DAO.MyDbHelper;
+import edu.fjut.se1603.lwd34.Entity.MyDatabaseHelper;
+import edu.fjut.se1603.lwd34.Entity.Student;
+
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
+
 import com.example.myhandclass.R;
 
 
@@ -18,12 +18,13 @@ public class AdminActivity extends AppCompatActivity {
     public Button stuB;
     public Button teaB;
     public Button cDB;
+    Student xiaoming = new Student();
     MyDatabaseHelper dbHelper = new MyDatabaseHelper(this, "MyHandClass.db", null, 1);
   protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
-        stuB = findViewById(R.id.StuAdminButton);
-        teaB = findViewById(R.id.TeaAdminButton);
+        stuB = findViewById(R.id.StuAdmin);
+        teaB = findViewById(R.id.TeaAdmin);
         cDB = findViewById(R.id.createDB);
         cDB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,26 +33,35 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
 
-     /*  stuB.setOnClickListener(new View.OnClickListener() {
+       stuB.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                   Intent intent = new Intent(AdminActivity.this, adminStuActivity.class);
-                    Toast.makeText(getApplicationContext(),"进入学生管理界面",Toast.LENGTH_SHORT).show();
-                    startActivity(intent);
-                    AdminActivity.this.finish();
+                  //add();
 
                 }
             });
         teaB.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(AdminActivity.this, adminTea.class);
-                    Toast.makeText(getApplicationContext(),"进入教师管理界面",Toast.LENGTH_SHORT).show();
-                    startActivity(intent);
-                    AdminActivity.this.finish();
-                }
-            });*/
-        }
 
+                }
+            });
+        }
+        private long add( ){
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            // 开始组装第一条数据
+            values.put("SName", "小明");
+            values.put("SProfess", "软件工程");
+            values.put("SClass", 3);
+            values.put("BirthDate", "1997-6-2");
+            values.put("SSex", "1");
+            values.put("Photo", "0101");
+            values.put("Pwd", "xiaoming");
+            long id= db.insert("student", null, values); // 插入第一条数据
+            values.clear();
+            db.close();
+            return id;
+        }
 
 }
