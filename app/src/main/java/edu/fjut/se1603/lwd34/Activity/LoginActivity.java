@@ -1,4 +1,5 @@
 package edu.fjut.se1603.lwd34.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -20,8 +21,6 @@ import java.util.List;
 import edu.fjut.se1603.lwd34.Entity.MyDatabaseHelper;
 import edu.fjut.se1603.lwd34.Entity.Student;
 
-//直接选择身份实现不同activity之间的跳转
-
 public class LoginActivity extends AppCompatActivity {
     private RadioButton StuButton;
     private RadioButton TeaButton;
@@ -29,6 +28,8 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginButton;
     private EditText username;
     private EditText pwd;
+    Bundle bundle = new Bundle();
+    MyDatabaseHelper dbHelper = new MyDatabaseHelper(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,63 +40,119 @@ public class LoginActivity extends AppCompatActivity {
         AdminButton = findViewById(R.id.radioAdmin);
         username = findViewById(R.id.editUsername);
         pwd = findViewById(R.id.editPwd);
-
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               findAccount();
+
+                String input_id=username.getText().toString();//输入的账号
+                String input_pwd=pwd.getText().toString();//输入的密码
+                if(input_id.isEmpty()||input_pwd.isEmpty())
+                {
+                    Toast.makeText(getApplicationContext(), "账号或密码不能为空！", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else {
+                    if (StuButton.isChecked()) {
+                        String back_stupwd =queryStuPwd(input_id);
+                      if(input_pwd.equals(back_stupwd)) {
+                           Toast.makeText(getApplicationContext(), "学生已登录成功", Toast.LENGTH_SHORT).show();
+
+                          Intent intent = new Intent(LoginActivity.this, StudentActivity.class);
+                         intent.putExtra("Sno",input_id);
+                          startActivity(intent);
+                          LoginActivity.this.finish();
+                      }
+                      else
+                          Toast.makeText(getApplicationContext(), "账号或密码错误！", Toast.LENGTH_SHORT).show();
+                        return;
+
+                    }
+                    else if(TeaButton.isChecked()){
+                        String back_teapwd =querTeaPwd(input_id);
+                        if(input_pwd.equals(back_teapwd)) {
+                            Intent intent = new Intent(LoginActivity.this, TeacherActivity.class);
+                            intent.putExtra("teaNo", input_id);
+                            Toast.makeText(getApplicationContext(), "教师已登录成功", Toast.LENGTH_SHORT).show();
+                            startActivity(intent);
+                            LoginActivity.this.finish();
+                        }
+                        else
+                            Toast.makeText(getApplicationContext(), "账号或密码错误！", Toast.LENGTH_SHORT).show();
+                             return;
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "请选择登录身份", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
             }
         });
     }
 
-    public void Login1(){
-       String input_User= username.getText().toString();
-       String input_Pwd = pwd.getText().toString();
 
 
-    }
-    public void logining() {
-        if(StuButton.isChecked()) {
-            Intent intent = new Intent(LoginActivity.this, StudentActivity.class);
-            //传递数据 账号 intent.putExtra()
-            Toast.makeText(getApplicationContext(),"学生已登录成功",Toast.LENGTH_SHORT).show();
-            startActivity(intent);
-            LoginActivity.this.finish();
-        }
-        else if(TeaButton.isChecked()){
-            Intent intent = new Intent(LoginActivity.this, TeacherActivity.class);
-            //传递数据 账号 intent.putExtra()
-            Toast.makeText(getApplicationContext(),"教师已登录成功",Toast.LENGTH_SHORT).show();
-            startActivity(intent);
-            LoginActivity.this.finish();
-        }
-        else if(AdminButton.isChecked()){
-            Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
-            Toast.makeText(getApplicationContext(),"管理员已登录成功",Toast.LENGTH_SHORT).show();
-            //传递数据 账号 intent.putExtra()
-            startActivity(intent);
-            LoginActivity.this.finish();
-        }
-    }
 //DAO:
-    public List<Student> findAccount(){
 
-        MyDatabaseHelper myDBHelper= new MyDatabaseHelper(getBaseContext());
-        List<Student> stuList = new ArrayList<Student>();
-        Student stu = new Student();
-        SQLiteDatabase db = myDBHelper.getWritableDatabase();
-        Cursor cursor = db.query("student", null, null, null, null, null, null);
-            while(cursor.moveToNext()) {
-                int username = cursor.getInt(cursor.getColumnIndex(("SNO")));
-                String pwd = cursor.getString(cursor.getColumnIndex("Pwd"));
-                stu.setPwd(pwd);
-                Log.d("学生登录账号：", String.valueOf(username));
-                Log.d("学生登录密码：", pwd);
-                stuList.add(stu);
-            }
-            cursor.close();
-        db.close();
-        return stuList;
+    public String queryStuPwd(String Sno) {
+        String pwd=null;
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select Pwd from student where SNo=?", new String[]{Sno});
+        if (cursor.moveToFirst()) {
+            do {
+                pwd = cursor.getString(cursor.getColumnIndex("Pwd"));
+                Log.d("学生密码", pwd);
+              } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        return pwd;
     }
 
+    public String querTeaPwd(String Tno) {
+        String pwd=null;
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select Pwd from teacher where TNo=?", new String[]{Tno});
+        if (cursor.moveToFirst()) {
+            do {
+                // 遍历Cursor对象，取出数据并打印
+                pwd = cursor.getString(cursor.getColumnIndex("Pwd"));
+                Log.d("教师密码", pwd);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        return pwd;
+    }
+    private long addStu( ){
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("SName", "张飞");
+        values.put("SProfess", "通信工程");
+        values.put("SClass", "2");
+        values.put("BirthDate", "1997-6-2");
+        values.put("SSex", "1");
+        values.put("Photo", "0101");
+        values.put("Pwd", "fei");
+        long id= db.insert("student", null, values);
+        values.clear();
+        db.close();
+        return id;
+    }
+    private long addTea( ){
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put("TName", "王教授");
+        values.put("TProfess", "软件工程");
+        values.put("TClass", "123");
+        values.put("BirthDate", "1966-1-2");
+        values.put("TSex", "1");
+        values.put("Photo", "010111");
+        values.put("Pwd", "wang");
+        long id= db.insert("teacher", null, values);
+        values.clear();
+        db.close();
+        return id;
+    }
 }
