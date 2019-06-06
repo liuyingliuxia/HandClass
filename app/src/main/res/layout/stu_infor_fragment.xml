@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/seeStuInfor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="22dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/stuphotoText"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="学生照片" />
+
+        <ImageButton
+            android:id="@+id/stuphotoimageButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="572dp"
+            android:layout_gravity="center"
+            android:contentDescription="学生照片"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/head01" />
+
+        <TextView
+            android:id="@+id/stunameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="姓名" />
+
+        <TextView
+            android:id="@+id/stuNoText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="学号" />
+
+        <TextView
+            android:id="@+id/stuSexText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="性别" />
+
+        <TextView
+            android:id="@+id/datetimeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="出生日期" />
+
+        <TextView
+            android:id="@+id/professText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="专业" />
+
+        <TextView
+            android:id="@+id/stuclassText"
+            android:layout_width="match_parent"
+            android:layout_height="304dp"
+            android:text="班级" />
+
+    </LinearLayout>
+</RelativeLayout>

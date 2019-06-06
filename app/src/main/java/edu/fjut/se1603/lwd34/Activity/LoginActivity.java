@@ -83,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
                     else {
                         Toast.makeText(getApplicationContext(), "请选择登录身份", Toast.LENGTH_SHORT).show();
                         return;
-                    }//
+                    }
                 }
             }
         });

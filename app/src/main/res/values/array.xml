@@ -7,25 +7,29 @@
 
     </string-array>
 
-    <string-array name="college">
-        <item>法学院</item>
-        <item>工学院</item>
-        <item>数理学院</item>
-        <item>人文学院</item>
+
+    <string-array name="stuclass">
+        <item>1班</item>
+        <item>2班</item>
+        <item>3班</item>
+        <item>4班</item>
+        <item>5班</item>
+        <item>6班</item>
     </string-array>
+
     <string-array name="profession">
-        <item>工管1班</item>
-        <item>工管2班</item>
-        <item>工管3班</item>
-        <item>软工1班</item>
-        <item>软工2班</item>
-        <item>软工3班</item>
-        <item>通信1班</item>
-        <item>通信2班</item>
-        <item>通信3班</item>
-        <item>国贸1班</item>
-        <item>国贸2班</item>
-        <item>国贸3班</item>
+        <item>工商管理</item>
+        <item>市场营销</item>
+        <item>土木工程</item>
+        <item>英语</item>
+        <item>数学</item>
+        <item>国际贸易</item>
+        <item>通信工程</item>
+        <item>物理</item>
+        <item>化学</item>
+        <item>水产养殖</item>
+        <item>大数据</item>
+        <item>计算机科学与信息</item>
     </string-array>
 
 </resources>
