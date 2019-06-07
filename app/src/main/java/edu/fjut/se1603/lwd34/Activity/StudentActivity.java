@@ -22,19 +22,33 @@ public class StudentActivity extends AppCompatActivity {
 
 
     MyDatabaseHelper dbHelper = new MyDatabaseHelper(this);
-    Button stuInf ;
-    Button stuXiuxi;
+    Button meBT ;
+    Button attendBT;
+    Button assessBT;
+    Button myclassBT;
+    Button homeworkBT;
+    String stu_id;
+    String stuName=null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
         Intent intent =getIntent();
-        String stu_id=intent.getStringExtra("Sno");
+        stu_id=intent.getStringExtra("Sno");
         Log.d("传进的学号：",stu_id);
-        stuInf= findViewById(R.id.inforAdmin);
-        stuXiuxi= findViewById(R.id.xiuxiQuery);
-        stuInf.setOnClickListener(l);
-        stuXiuxi.setOnClickListener(l);
+
+        meBT= findViewById(R.id.me);
+        attendBT= findViewById(R.id.attend);
+        assessBT =findViewById(R.id.assess);
+        myclassBT =findViewById(R.id.myclass);
+        homeworkBT =findViewById(R.id.homework);
+
+        meBT.setOnClickListener(l);
+        attendBT.setOnClickListener(l);
+        assessBT.setOnClickListener(l);
+        myclassBT.setOnClickListener(l);
+        homeworkBT.setOnClickListener(l);
     }
 
 
@@ -45,16 +59,26 @@ public class StudentActivity extends AppCompatActivity {
             FragmentTransaction ft = fm.beginTransaction();
             Fragment f = null;
             switch (v.getId()) {
-                case R.id.inforAdmin:
+                case R.id.me:
                     f = new stuInforFragment();
                     break;
-                case R.id.xiuxiQuery:
-                    f = new stuXiuxiFragment();
+                case R.id.attend:
+                    f = new stuAttendFragment();
                     break;
+                case R.id.myclass:
+                    f = new myClassFragment();
+                    break;
+                case R.id.assess:
+                    f = new stuAssessFragment();
+                    break;
+                case R.id.homework:
+                    f = new homeworkFragment();
+                    break;
+
                 default:
                     break;
             }
-            ft.replace(R.id.fragment, f);
+            ft.replace(R.id.stuinforfrag, f);
             ft.commit();
         }
 
@@ -62,7 +86,7 @@ public class StudentActivity extends AppCompatActivity {
 
     public String queryNameById(String sid)
     {
-        String stuName=null;
+
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor cursor = db.rawQuery("select SName from student where SNo=?", new String[]{sid});
         if (cursor.moveToFirst()) {
@@ -73,6 +97,14 @@ public class StudentActivity extends AppCompatActivity {
             } while (cursor.moveToNext());
         }
         cursor.close();
+        return stuName;
+    }
+    public String getStu_id(){
+        Log.d("传到fragment的学生id:",stu_id);
+        return stu_id;
+    }
+    public String getStu_name(){
+        Log.d("传到fragment的学生姓名:",stuName);
         return stuName;
     }
 }

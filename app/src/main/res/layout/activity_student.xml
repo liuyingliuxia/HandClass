@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/stubg"
     android:orientation="vertical"
-
     tools:context="edu.fjut.se1603.lwd34.Activity.StudentActivity">
 
 
@@ -16,7 +14,7 @@
         android:orientation="vertical">
 
         <fragment
-            android:id="@+id/fragment"
+            android:id="@+id/stuFragment"
             android:name="edu.fjut.se1603.lwd34.Activity.stuInforFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,23 +32,48 @@
         android:orientation="horizontal"
         android:layout_alignParentBottom="true">
 
-        <Button
-            android:id="@+id/xiuxiQuery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/button_color2"
-            android:text="@string/studentlook"
 
-            />
 
         <Button
-            android:id="@+id/inforAdmin"
+            android:id="@+id/me"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/button_color"
-            android:text="@string/infor" />
-    </LinearLayout>
+            android:text="我" />
+        <Button
+            android:id="@+id/attend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/button_color2"
+            android:text="出勤"
+
+            />
+        <Button
+            android:id="@+id/myclass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/button_color"
+            android:text="课堂" />
+        <Button
+            android:id="@+id/homework"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/button_color2"
+            android:text="作业成绩"
+
+            />
+        <Button
+            android:id="@+id/assess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/button_color"
+            android:text="平时成绩"
+
+            />    </LinearLayout>
 
 </RelativeLayout>

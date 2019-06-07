@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 
 import com.example.myhandclass.R;
 
-public class stuXiuxiFragment extends Fragment {
+public class stuAttendFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.stu_xiuxi_fragment,null);
+        View view = inflater.inflate(R.layout.stu_attend_fragment,container, false);
         return view;
     }
 }

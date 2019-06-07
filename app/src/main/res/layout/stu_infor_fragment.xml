@@ -3,70 +3,180 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/stubg"
+    android:textColor="@color/textcolor"
+    android:id="@+id/stuinforfrag"
     android:orientation="vertical">
-
     <LinearLayout
-        android:id="@+id/seeStuInfor"
+        android:id="@+id/stuphoto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="130dp"
         android:orientation="horizontal">
+    <TextView
+        android:id="@+id/stuphototext"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="照片：" />
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/head03"
+            android:scaleType="centerInside"
+            android:layout_marginLeft="80dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/stu_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:layout_below="@+id/stuphoto"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+<TextView
+    android:layout_width="80dp"
+    android:layout_height="wrap_content"
+    android:gravity="right"
+    android:paddingRight="5dp"
+    android:text="学号："/>
+        <EditText
+            android:id="@+id/et_stu_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/stuname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/stu_no"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
         <TextView
-            android:id="@+id/stuphotoText"
+            android:id="@+id/stunameText"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:gravity="right"
-            android:text="学生照片" />
+            android:text="姓名：" />
 
-        <ImageButton
-            android:id="@+id/stuphotoimageButton"
+        <EditText
+            android:id="@+id/et_stu_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="572dp"
-            android:layout_gravity="center"
-            android:contentDescription="学生照片"
-            android:scaleType="centerInside"
-            app:srcCompat="@drawable/head01" />
-
+            android:textSize="14dp"
+            />
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/studate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stuname"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
         <TextView
-            android:id="@+id/stunameText"
+            android:id="@+id/stuDateText"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="出生日期：" />
+
+        <EditText
+            android:id="@+id/et_stu_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="姓名" />
-
-        <TextView
-            android:id="@+id/stuNoText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="学号" />
-
-        <TextView
-            android:id="@+id/stuSexText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="性别" />
-
-        <TextView
-            android:id="@+id/datetimeText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="出生日期" />
-
-        <TextView
-            android:id="@+id/professText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="专业" />
-
-        <TextView
-            android:id="@+id/stuclassText"
-            android:layout_width="match_parent"
-            android:layout_height="304dp"
-            android:text="班级" />
-
+            android:textSize="14dp"
+            android:inputType="textPersonName"
+            />
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/stusex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/studate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+    <TextView
+        android:id="@+id/stuSex"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="性别：" />
+
+        <EditText
+            android:id="@+id/et_stu_sex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:inputType="textPersonName"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/stuprofress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stusex"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/stuProfessText"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="专业：" />
+        <EditText
+            android:id="@+id/et_stu_profess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:inputType="textPersonName"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/stuclass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stuprofress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/stuClassText"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="班级：" />
+        <EditText
+            android:id="@+id/et_stu_class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:inputType="textPersonName"
+            />
+    </LinearLayout>
+
 </RelativeLayout>

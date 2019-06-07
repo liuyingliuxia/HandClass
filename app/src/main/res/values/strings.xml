@@ -28,4 +28,7 @@
     <string name="stuNo">学号</string>
     <string name="college">学院</string>
     <string name="teacherManager">教师管理</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

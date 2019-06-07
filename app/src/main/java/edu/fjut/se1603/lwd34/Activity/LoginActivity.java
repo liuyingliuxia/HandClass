@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                addStu();
                 String input_id=username.getText().toString();//输入的账号
                 String input_pwd=pwd.getText().toString();//输入的密码
                 if(input_id.isEmpty()||input_pwd.isEmpty())
@@ -127,13 +127,13 @@ public class LoginActivity extends AppCompatActivity {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put("SName", "张飞");
+        values.put("SName", "test");
         values.put("SProfess", "通信工程");
         values.put("SClass", "2");
         values.put("BirthDate", "1997-6-2");
         values.put("SSex", "1");
         values.put("Photo", "0101");
-        values.put("Pwd", "fei");
+        values.put("Pwd", "0");
         long id= db.insert("student", null, values);
         values.clear();
         db.close();
