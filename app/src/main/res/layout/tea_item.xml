@@ -5,7 +5,7 @@
     android:orientation="horizontal"
     android:padding="10dp">
     <TextView
-        android:id="@+id/idTV"
+        android:id="@+id/teaidTV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -13,7 +13,7 @@
         android:textColor="#ffffff"
         android:textSize="20sp"/>
     <TextView
-        android:id="@+id/nameTV"
+        android:id="@+id/teaPwdTV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -22,6 +22,11 @@
         android:textColor="#ffffff"
         android:textSize="20sp"/>
 
+    <ImageView
+        android:id="@+id/deleteIV"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@android:drawable/ic_delete" />
 
 
 </LinearLayout>

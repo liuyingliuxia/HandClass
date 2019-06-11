@@ -6,7 +6,7 @@
     tools:context="edu.fjut.se1603.lwd34.Fragment.myClassFragment">
 
     <LinearLayout
-        android:id="@+id/chooseClass"
+        android:id="@+id/chooseClass1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -20,10 +20,10 @@
             android:layout_height="match_parent"
             android:text="选择课程：" />
         <Spinner
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:entries="@array/classname"
-            android:background="@color/colorAccent"
+            android:background="@color/button_color2"
             android:gravity="center"
             >
 
@@ -37,7 +37,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:layout_marginRight="50dp"
-        android:layout_below="@+id/chooseClass"
+        android:layout_below="@+id/chooseClass1"
         android:layout_marginLeft="50dp"
         android:orientation="horizontal">
 
@@ -50,6 +50,7 @@
             android:layout_height="wrap_content"
             android:gravity="left"
             android:layout_weight="1"
+            android:background="@color/button_color"
             android:text="张德帅"/>
     </LinearLayout>
 
@@ -72,6 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/button_color2"
             android:text="90"/>
     </LinearLayout>
 </RelativeLayout>

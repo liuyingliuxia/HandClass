@@ -1,5 +1,7 @@
 package edu.fjut.se1603.lwd34.Activity;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +39,12 @@ public class admin_teaActivity extends AppCompatActivity {
         list=dao.queryTeacher();
         adapter= new MyAdapter();
         teaLV.setAdapter(adapter);
-
+        addIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                add(v);
+            }
+        });
     }
 
     private void initView(){
@@ -84,12 +91,32 @@ public class admin_teaActivity extends AppCompatActivity {
         }
 
         public View getView(int position, View convertView, ViewGroup parent) {
-            View item = convertView!=null?convertView:View.inflate(getApplicationContext(),R.layout.stu_item,null);
-            TextView idTV= item.findViewById(R.id.idTV);
-            TextView nameTV = item.findViewById(R.id.nameTV);
+            View item = convertView!=null?convertView:View.inflate(getApplicationContext(),R.layout.tea_item,null);
+            TextView idTV= item.findViewById(R.id.teaidTV);
+            TextView nameTV = item.findViewById(R.id.teaPwdTV);
             final Teacher s = list.get(position);
             idTV.setText(s.getTno()+"");
-            nameTV.setText(s.getTname());
+            nameTV.setText(s.getPwd());
+            ImageView deleteIV = item.findViewById(R.id.deleteIV);
+            //删除
+            deleteIV.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    android.content.DialogInterface.OnClickListener listener=new android.content.DialogInterface.OnClickListener(){
+                        public void onClick (DialogInterface dialog, int which){
+                            list.remove(s);
+                            dao.deletestu(s.getTno());
+                            notifyDataSetChanged();
+                        }
+                    };
+
+                    AlertDialog.Builder builder=new AlertDialog.Builder(admin_teaActivity.this);
+                    builder.setTitle("确定要删除吗？");
+                    builder.setPositiveButton("确定",listener);
+                    builder.setNegativeButton("取消",listener);
+                    builder.show();
+                }
+            });
 
             return item;
         }

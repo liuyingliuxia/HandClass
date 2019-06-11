@@ -49,7 +49,7 @@ public class adminStuActivity extends AppCompatActivity {
 private void initView(){
 
     stuLV = (ListView)findViewById(R.id.stuLV);
-    SNo = (EditText ) findViewById(R.id.sno);
+    SNo = (EditText ) findViewById(R.id.spwd);
     SName = (EditText) findViewById(R.id.sname);
     addIV=(ImageView) findViewById(R.id.addIV);
     stuLV.setOnItemClickListener(new MyOnItemClickListener());
@@ -93,11 +93,13 @@ private void initView(){
             final Student s = list.get(position);
 
             TextView idTV = item.findViewById(R.id.idTV);
-            TextView nameTV = item.findViewById(R.id.nameTV);
-            idTV.setText(s.getSno() + "");
-            nameTV.setText(s.getSname());
-            ImageView deleteIV = item.findViewById(R.id.deleteIV);
+            TextView nameTV = item.findViewById(R.id.pwdTV);
 
+            idTV.setText(s.getSno() + "");
+            nameTV.setText(s.getPwd());
+
+
+            ImageView deleteIV = item.findViewById(R.id.deleteIV);
             //删除
             deleteIV.setOnClickListener(new View.OnClickListener() {
                 @Override

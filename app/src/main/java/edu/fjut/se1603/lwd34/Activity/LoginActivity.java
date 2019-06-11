@@ -41,13 +41,13 @@ public class LoginActivity extends AppCompatActivity {
         username = findViewById(R.id.editUsername);
         adminButton = findViewById(R.id.adminButton);
         pwd = findViewById(R.id.editPwd);
+        queryTea();
+        queryStu();
         adminButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
-              //  addStu();
-               // db.delete("student", "SName =?", new String[] { "test" });
-               // queryStuNONAME();
+               //addStu();
                 Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
                 startActivity(intent);
             }
@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-          testLogin();
+          normalLogin();
         }
 
 public void normalLogin()
@@ -137,23 +137,45 @@ public void testLogin()
 
         return pwd;
     }
-    public void queryStuNONAME() {
+    public void queryStu() {
         String sno=null;
         String sname =null;
+        String spwd = null;
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor cursor = db.rawQuery("select * from student where SNo>?", new String[]{"0"});
         if (cursor.moveToFirst()) {
             do {
                 sno = cursor.getString(cursor.getColumnIndex("SNo"));
                 sname= cursor.getString(cursor.getColumnIndex("SName"));
+                spwd= cursor.getString(cursor.getColumnIndex("Pwd"));
                 Log.d("学号",sno);
-                Log.d("学生姓名", sname);
+             //   Log.d("学生姓名", sname);
+                Log.d("学生密码",spwd);
             } while (cursor.moveToNext());
         }
         cursor.close();
 
     }
 
+    public void queryTea() {
+        String sno=null;
+        String sname =null;
+        String spwd = null;
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from teacher where TNo>?", new String[]{"0"});
+        if (cursor.moveToFirst()) {
+            do {
+                sno = cursor.getString(cursor.getColumnIndex("TNo"));
+                sname= cursor.getString(cursor.getColumnIndex("TName"));
+                spwd= cursor.getString(cursor.getColumnIndex("Pwd"));
+                Log.d("职工号",sno);
+              //  Log.d("教师姓名", sname);
+                Log.d("教师密码",spwd);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+    }
     public String querTeaPwd(String Tno) {
         String pwd=null;
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -206,11 +228,11 @@ public void testLogin()
         ContentValues values = new ContentValues();
 
         values.put("SNo", "8");
-        values.put("AttendDate", "2019-6-1");
+        values.put("AttendDate", "2019-6-2");
         values.put("Week", "5");
-        values.put("ClassId", "8");
-        values.put("AttendStatus", "-1");
-        values.put("ClassName", "计算机英语");
+        values.put("ClassId", "1");
+        values.put("AttendStatus", "0");
+        values.put("ClassName", "java编程");
         long id= db.insert("stu_attend", null, values);
         values.clear();
         db.close();

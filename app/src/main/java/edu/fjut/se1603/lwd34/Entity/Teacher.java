@@ -1,6 +1,9 @@
 package edu.fjut.se1603.lwd34.Entity;
 
 public class Teacher {
+    private int tno,tsex,tclass;
+    private String tname,tprofess,birthDate,photo,pwd;
+
     public int getTno() {
         return tno;
     }
@@ -65,13 +68,17 @@ public class Teacher {
         this.pwd = pwd;
     }
 
-    public Teacher(int tno, String tname) {
+    public Teacher(int tno, String pwd) {
         super();
         this.tno = tno;
-        this.tname = tname;
+        this.pwd = pwd;
     }
 
-    private int tno,tsex,tclass;
-    private String tname,tprofess,birthDate,photo,pwd;
-
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "tno=" + tno +
+                ", pwd='" + pwd + '\'' +
+                '}';
+    }
 }

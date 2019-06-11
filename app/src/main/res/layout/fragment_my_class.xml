@@ -20,8 +20,9 @@
             android:layout_height="match_parent"
             android:text="选择课程：" />
         <Spinner
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/button_color"
             android:entries="@array/classname"
             android:gravity="center"
             >
@@ -49,6 +50,7 @@
            android:layout_height="wrap_content"
            android:gravity="left"
            android:layout_weight="1"
+           android:background="@color/button_color"
            android:text="张天祥"/>
     </LinearLayout>
 
@@ -70,6 +72,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/button_color"
             android:layout_weight="1"
             android:text="80"/>
     </LinearLayout>

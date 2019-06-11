@@ -10,15 +10,14 @@ public class Student {
 
     @Override
     public String toString() {
-        return "学生信息" +
-                "学号=" + sno +
-                ", 姓名=" + sname ;}
+        return "学号=" + sno +
+                ",初始密码="+pwd;}
 
 
-    public Student(int sno,String sname) {
+    public Student(int sno,String pwd) {
         super();
         this.sno = sno;
-        this.sname = sname;
+        this.pwd = pwd;
     }
 
     public Student(int sno, int sclass, int stuSex, String sname, String sprofess, String birthDate, String photo, String pwd) {
