@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/teachbg"
+    android:orientation="vertical"
+    tools:context="edu.fjut.se1603.lwd34.Activity.adminStuActivity">
+    <LinearLayout
+        android:id="@+id/addLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/sno"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/textcolor"
+            android:text="学号"
+            android:inputType="textPersonName"
+            />
+
+        <TextView
+            android:id="@+id/attenddate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:text="日期"
+            android:textColor="@color/textcolor" />
+
+        <TextView
+            android:id="@+id/attendclassname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="课程名"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/attendstatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="状态"
+            android:textColor="#000000" />
+    </LinearLayout>
+    <ListView
+        android:id="@+id/attendLV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ></ListView>
+
+</LinearLayout>

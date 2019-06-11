@@ -12,11 +12,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.support.v4.app.FragmentActivity;
+import android.widget.Toast;
 
 import com.example.myhandclass.R;
 
 import edu.fjut.se1603.lwd34.Entity.MyDatabaseHelper;
+import edu.fjut.se1603.lwd34.Fragment.homeworkFragment;
+import edu.fjut.se1603.lwd34.Fragment.myClassFragment;
+import edu.fjut.se1603.lwd34.Fragment.stuAssessFragment;
+import edu.fjut.se1603.lwd34.Fragment.stuAttendFragment;
+import edu.fjut.se1603.lwd34.Fragment.stuInforFragment;
 
 public class StudentActivity extends AppCompatActivity {
 
@@ -27,7 +33,7 @@ public class StudentActivity extends AppCompatActivity {
     Button assessBT;
     Button myclassBT;
     Button homeworkBT;
-    String stu_id;
+    String stu_id=null;
     String stuName=null;
 
     @Override
@@ -37,10 +43,9 @@ public class StudentActivity extends AppCompatActivity {
         Intent intent =getIntent();
         stu_id=intent.getStringExtra("Sno");
         Log.d("传进的学号：",stu_id);
-
         meBT= findViewById(R.id.me);
         attendBT= findViewById(R.id.attend);
-        assessBT =findViewById(R.id.assess);
+        assessBT =findViewById(R.id.score_calculate);
         myclassBT =findViewById(R.id.myclass);
         homeworkBT =findViewById(R.id.homework);
 
@@ -49,6 +54,8 @@ public class StudentActivity extends AppCompatActivity {
         assessBT.setOnClickListener(l);
         myclassBT.setOnClickListener(l);
         homeworkBT.setOnClickListener(l);
+//        getStu_id();
+//        getStu_name();
     }
 
 
@@ -63,12 +70,12 @@ public class StudentActivity extends AppCompatActivity {
                     f = new stuInforFragment();
                     break;
                 case R.id.attend:
-                    f = new stuAttendFragment();
+                   f = new stuAttendFragment();
                     break;
                 case R.id.myclass:
                     f = new myClassFragment();
                     break;
-                case R.id.assess:
+                case R.id.score_calculate:
                     f = new stuAssessFragment();
                     break;
                 case R.id.homework:
@@ -78,7 +85,7 @@ public class StudentActivity extends AppCompatActivity {
                 default:
                     break;
             }
-            ft.replace(R.id.stuinforfrag, f);
+            ft.replace(R.id.stuFragment, f);
             ft.commit();
         }
 
@@ -99,6 +106,7 @@ public class StudentActivity extends AppCompatActivity {
         cursor.close();
         return stuName;
     }
+
     public String getStu_id(){
         Log.d("传到fragment的学生id:",stu_id);
         return stu_id;

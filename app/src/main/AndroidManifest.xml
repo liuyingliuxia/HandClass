@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myhandclass">
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 请求访问使用照相设备 -->
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -9,25 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name="edu.fjut.se1603.lwd34.Activity.LoginActivity" >
+        <activity android:name="edu.fjut.se1603.lwd34.Activity.homeworkActivity"></activity>
+        <activity android:name="edu.fjut.se1603.lwd34.Activity.stu_assessActivity" />
+        <activity android:name="edu.fjut.se1603.lwd34.Activity.admin_teaActivity" />
+        <activity android:name="edu.fjut.se1603.lwd34.Activity.stu_attendActivity" />
+        <activity android:name="edu.fjut.se1603.lwd34.Activity.adminStuActivity" />
+        <activity android:name="edu.fjut.se1603.lwd34.Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name="edu.fjut.se1603.lwd34.Activity.TeacherActivity" />
         <activity android:name="edu.fjut.se1603.lwd34.Activity.StudentActivity" />
-        <activity android:name="edu.fjut.se1603.lwd34.Activity.AdminActivity" >
-
-        </activity>
-
+        <activity android:name="edu.fjut.se1603.lwd34.Activity.AdminActivity" />
     </application>
-
-
-    <!-- 往SDCard写入数据权限 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!--请求访问使用照相设备-->
-    <uses-permission android:name="android.permission.CAMERA" />
 
 </manifest>

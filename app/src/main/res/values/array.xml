@@ -9,12 +9,18 @@
 
 
     <string-array name="stuclass">
-        <item>1班</item>
-        <item>2班</item>
-        <item>3班</item>
-        <item>4班</item>
-        <item>5班</item>
-        <item>6班</item>
+        <item>1601班</item>
+        <item>1602班</item>
+        <item>1603班</item>
+        <item>1704班</item>
+        <item>1705班</item>
+        <item>1706班</item>
+        <item>1801班</item>
+        <item>1802班</item>
+        <item>1803班</item>
+        <item>1904班</item>
+        <item>1905班</item>
+        <item>1906班</item>
     </string-array>
 
     <string-array name="profession">
@@ -32,5 +38,19 @@
         <item>计算机科学与信息</item>
     </string-array>
 
+    <string-array name="classname">
+        <item>高等数学</item>
+        <item>大学英语</item>
+        <item>大学物理</item>
+        <item>计算机导论</item>
+        <item>离散数学</item>
+        <item>国际贸易导论</item>
+        <item>移动应用开发</item>
+        <item>计算机组成原理</item>
+        <item>概率论与数理统计</item>
+        <item>水产养殖技术</item>
+        <item>毛泽东思想概论</item>
+        <item>大学体育</item>
+    </string-array>
 </resources>
 

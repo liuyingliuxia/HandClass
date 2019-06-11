@@ -1,4 +1,4 @@
-package edu.fjut.se1603.lwd34.Activity;
+package edu.fjut.se1603.lwd34.Fragment;
 
 
 import android.os.Bundle;
@@ -24,7 +24,7 @@ public class homeworkFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_homework, container, false);
+        return inflater.inflate(R.layout.fragment_homework, null);
     }
 
 }

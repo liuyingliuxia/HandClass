@@ -1,4 +1,4 @@
-package edu.fjut.se1603.lwd34.Activity;
+package edu.fjut.se1603.lwd34.Fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -15,7 +15,13 @@ public class stuAttendFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.stu_attend_fragment,container, false);
+        View view = inflater.inflate(R.layout.fragment_stu_attend,null);
+
         return view;
+    }
+    public void add(View v)
+    {
+
+
     }
 }

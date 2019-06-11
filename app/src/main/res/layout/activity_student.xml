@@ -15,10 +15,10 @@
 
         <fragment
             android:id="@+id/stuFragment"
-            android:name="edu.fjut.se1603.lwd34.Activity.stuInforFragment"
+            android:name="edu.fjut.se1603.lwd34.Fragment.stuInforFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            tools:layout="@layout/fragment_stu_infor">
 
         </fragment>
 
@@ -63,11 +63,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/button_color2"
-            android:text="作业成绩"
+            android:text="作业"
 
             />
         <Button
-            android:id="@+id/assess"
+            android:id="@+id/score_calculate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

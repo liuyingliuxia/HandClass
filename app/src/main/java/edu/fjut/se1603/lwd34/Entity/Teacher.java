@@ -65,6 +65,12 @@ public class Teacher {
         this.pwd = pwd;
     }
 
+    public Teacher(int tno, String tname) {
+        super();
+        this.tno = tno;
+        this.tname = tname;
+    }
+
     private int tno,tsex,tclass;
     private String tname,tprofess,birthDate,photo,pwd;
 

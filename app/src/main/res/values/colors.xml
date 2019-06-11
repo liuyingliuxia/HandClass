@@ -10,4 +10,7 @@
     <color name="button_color">#0B73D6</color>
     <color name="textcolor">#000000</color>
     <color name="button_color2">#81A7EB</color>
+    <color name="button_color3">#97DF3DBA</color>
+    <color name="button_color4">#B0FC9E31</color>
+
 </resources>

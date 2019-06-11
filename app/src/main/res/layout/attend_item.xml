@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp">
+    <TextView
+        android:id="@+id/ano"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="学号"
+        android:textColor="#000000"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/adate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:singleLine="true"
+        android:text="日期"
+        android:textColor="#000000"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/aclassname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="课程名"
+        android:textColor="#000000"
+        android:textSize="20sp"/>
+
+
+    <ImageView
+        android:id="@+id/leaveIV"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/leave"/>
+    <ImageView
+        android:id="@+id/lateIV"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/late"/>
+    <ImageView
+        android:id="@+id/geIV"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ge" />
+
+</LinearLayout>

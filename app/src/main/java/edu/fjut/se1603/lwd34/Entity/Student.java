@@ -10,20 +10,26 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "sno=" + sno +
-                ", sclass=" + sclass +
-                ", stuSex=" + stuSex +
-                ", sname='" + sname + '\'' +
-                ", sprofess='" + sprofess + '\'' +
-                ", birthDate='" + birthDate + '\'' +
-                ", photo='" + photo + '\'' +
-                ", pwd='" + pwd + '\'' +
-                '}';
+        return "学生信息" +
+                "学号=" + sno +
+                ", 姓名=" + sname ;}
+
+
+    public Student(int sno,String sname) {
+        super();
+        this.sno = sno;
+        this.sname = sname;
     }
 
-    public Student(int sno,String pwd) {
+    public Student(int sno, int sclass, int stuSex, String sname, String sprofess, String birthDate, String photo, String pwd) {
+       super();
         this.sno = sno;
+        this.sclass = sclass;
+        this.stuSex = stuSex;
+        this.sname = sname;
+        this.sprofess = sprofess;
+        this.birthDate = birthDate;
+        this.photo = photo;
         this.pwd = pwd;
     }
 

@@ -1,55 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="@drawable/teachbg"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context="edu.fjut.se1603.lwd34.Activity.TeacherActivity">
 
-    <android.support.constraint.ConstraintLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button6"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.47"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.499"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:text="@string/infor"
-            android:background="@color/button_color2"
-            tools:layout_editor_absoluteX="49dp"
-            tools:layout_editor_absoluteY="106dp" />
-
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:text="@string/teacherlook"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:background="@color/button_color2"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.313" />
-
-        <TextView
-            android:id="@+id/textView4"
+        <fragment
+            android:id="@+id/teaFragment"
+            android:name="edu.fjut.se1603.lwd34.Fragment.teaInforFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_tea_infor">
 
-            android:text="@string/welcometea"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.155" />
-    </android.support.constraint.ConstraintLayout>
-</LinearLayout>
+        </fragment>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+
+
+        <Button
+            android:id="@+id/meT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/button_color3"
+            android:text="我" />
+        <Button
+            android:id="@+id/attendT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/button_color4"
+            android:text="出勤管理"
+
+            />
+        <Button
+            android:id="@+id/assessT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/button_color3"
+            android:text="课堂评价管理" />
+
+        <Button
+            android:id="@+id/homeworkT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/button_color4"
+            android:text="作业成绩管理" />
+
+        </LinearLayout>
+
+</RelativeLayout>

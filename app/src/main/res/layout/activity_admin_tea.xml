@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/stubg"
+    android:orientation="vertical"
+    tools:context="edu.fjut.se1603.lwd34.Activity.admin_teaActivity">
+    <LinearLayout
+        android:id="@+id/addLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/tno"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="职工号"
+            android:inputType="textPersonName"
+          />
+        <EditText
+            android:id="@+id/tname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="密码"/>a
+        <ImageView
+            android:id="@+id/taddIV"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/input_add"/>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/teaLV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ></ListView>
+
+</LinearLayout>

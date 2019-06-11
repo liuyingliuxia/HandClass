@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/teachbg"
+    android:orientation="vertical"
+    tools:context="edu.fjut.se1603.lwd34.Activity.adminStuActivity">
+    <LinearLayout
+        android:id="@+id/addLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/snoET"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="textPersonName"
+            android:hint="学号"
+            android:textColor="@color/textcolor" />
+
+
+        <EditText
+            android:id="@+id/cnameET"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="课程名"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/titleET"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="作业标题"
+            android:textColor="#000000" />
+        <EditText
+            android:id="@+id/gradeET"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="作业成绩"
+            android:textColor="#000000" />
+        <ImageView
+            android:id="@+id/addHomework"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_input_add" />
+    </LinearLayout>
+    <ListView
+        android:id="@+id/homeLV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ></ListView>
+
+</LinearLayout>
